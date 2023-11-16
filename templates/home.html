@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/home.css">
+{% endblock css %}
+{% block body %}
+<section class="home-container">
+    <h2 class="home-h2">Welcome to Space Blog</h2>
+    <form action="/" method="POST">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, msg in messages %}
+                <p class="flash-{{category}}">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <h2>Login to your account</h2>
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="pw" id="pw" placeholder="Password">
+        <button class="btn">LOG IN</button>
+        <div class="form-footer">
+            <h6>Don't have an account? <a href="/signup">Sign Up</a></h6>
+            <h6><a href="/reset-password">Forgot Password?</a></h6>
+        </div>
+    </form>
+</section>
+{% endblock body %}

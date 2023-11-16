@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container::before {
+    content: "";
+    background: url('https://www.us-analytics.com/hs-fs/hubfs/contact%20us%20-%20resized_2.jpg?width=600&name=contact%20us%20-%20resized_2.jpg') no-repeat center center/cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90vh;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.container form {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+    width: 600px;
+    height: 500px;
+}
+
+.container form h2 {
+    color: white;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.container form input,
+form textarea {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    width: 90%;
+    height: 31px;
+    margin: 10px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.container form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.btn {
+    border: 2px solid #ddd;
+    background-color: #ddd;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    width: 200px;
+    height: 40px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
+.container form #email{
+    pointer-events: none;
+}

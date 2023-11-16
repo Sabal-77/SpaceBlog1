@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashboard Login
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/home.css">
+{% endblock css %}
+{% block body %}
+<section class="home-container">
+    <h2 class="home-h2">Space Blog's Dashboard Login</h2>
+    <form action="/dashboard" method="POST">
+        <h2>Dashboard Login</h2>
+        <input type="text" name="uname" id="text" placeholder="Username">
+        <input type="password" name="pw" id="pw" placeholder="Password">
+        <button class="btn">LOG IN</button>
+    </form>
+</section>
+{% endblock body %}

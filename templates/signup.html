@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+Sign up
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/signup.css">
+{% endblock css %}
+{% block body %}
+<section class="home-container">
+    <h2 class="home-h2">Welcome to Space Blog</h2>
+    <form action="/signup" method="POST">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, msg in messages %}
+                <p class="flash-{{category}}">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <h2>Create your account</h2>
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="pw" id="pw" placeholder="Password">
+        <input type="password" name="cpw" id="cpw" placeholder="Confirm Password">
+        <button class="btn">SIGN UP</button>
+        <h6>Already have an account? <a href="/">Login</a></h6>
+    </form>
+</section>
+{% endblock body %}

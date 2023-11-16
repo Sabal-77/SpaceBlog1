@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Blog
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/blog.css">
+{% endblock css %}
+{% block body %}
+<section class="blog">
+    <h2>Space Blog</h2>
+</section>
+<section class="blog-posts">
+    {% if posts|length==0 %}
+    <h2 class="alert">No Posts to Show</h2>
+    {% else %}
+    {% for post in posts %}
+    <a href="/blog/{{post.slug}}">
+        <div class="posts">
+            <h2 class="heading">{{post.title}}</h2>
+            <h2 class="tagline">{{post.tagline}}</h2>
+            <h3 class="date">Posted on {{(post.date).strftime('%c')}}</h3>
+            <p class="content">{{post.content[:100]}}...</p>
+        </div>
+    </a>
+    {% endfor %}
+    <div class="buttons">
+        <button class="btns" onclick="window.location.href='{{prev}}'">&larr; Previous</button>
+        <button class="btns" id="btn-next" onclick="window.location.href='{{next}}'">Next &rarr;</button>
+    </div>
+    {% endif %}
+</section>
+{% endblock body %}

@@ -1,0 +1,16 @@
+{
+    "config": {
+        "local_server": 1,
+        "local_db": "sqlite:///blog.db",
+        "production_db": "",
+        "secret_key": "spaceblog",
+        "admin_user": "warchief",
+        "admin_pw": "warchief",
+        "posts_to_show": 5
+    },
+    "posts": {
+        "id": 12,
+        "slug": "blogpost-12",
+        "total_posts": 11
+    }
+}

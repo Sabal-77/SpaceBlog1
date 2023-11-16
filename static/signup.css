@@ -1,0 +1,74 @@
+/* Section: Home */
+.home-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    flex-direction: column;
+}
+
+.home-h2{
+    position: absolute;
+    top:100px;
+    text-decoration: underline;
+    color: red;
+    font-weight: bolder;
+    font-size: 2.3rem;
+}
+
+.home-container::before {
+    content: "";
+    background: url('https://cdn.discordapp.com/attachments/1043567888524648551/1173536099260440576/image.png?ex=65644fa9&is=6551daa9&hm=c4b57e15a4052ddb10bf9479effbd8b362c4149923fe233cc2dd157cff3c378c&') no-repeat center center/cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* Login form styling */
+.home-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+    height:300px;
+    border: 2px solid white;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+}
+
+.home-container form input{
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.btn{
+    color:white;
+    width: 175px;
+    height: 26px;
+    font-size:1.1rem;
+    font-weight: bolder;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+form h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form h6 a{
+    color:white;
+    margin-top:5px;
+}

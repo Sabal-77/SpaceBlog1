@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Sign up
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/contact.css">
+{% endblock css %}
+{% block body %}
+<section class="container">
+    <form action="/contact" method="POST">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, msg in messages %}
+                <p class="flash-{{category}}">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <h2>Contact Space Blog's Admins</h2>
+        <input type="email" name="email" id="email" placeholder="Email" value="{{email}}">
+        <input type="subject" name="subject" id="subject" placeholder="Subject">
+        <textarea name="msg" placeholder="Message" id="msg"></textarea>
+        <button class="btn">Send Message</button>
+    </form>
+</section>
+{% endblock body %}

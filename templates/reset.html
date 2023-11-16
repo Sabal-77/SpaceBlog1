@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/home.css">
+{% endblock css %}
+{% block body %}
+<section class="home-container">
+    <form action="reset-password" method="POST">
+        <h2>Reset your password</h2>
+        <input type="email" name="email" id="email-read" placeholder="Email" value="{{data.email}}">
+        <input type="password" name="pw" id="pw" placeholder="Password">
+        <button class="btn">RESET</button>
+    </form>
+</section>
+{% endblock body %}

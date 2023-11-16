@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashboard
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/dashboard.css">
+{% endblock css %}
+{% block body %}
+<nav>
+    <button class="nav-btn" onclick="window.location.href='/dashlogout'">Logout</button>
+</nav>
+<section class="heading">
+    <div class="container">
+        <h1>Admin Panel</h1>
+    </div>
+</section>
+<section class="post">
+    <div class="post-parts">
+        <h1>Manage Posts:</h1>
+        <button class="btn" id="btn1" onclick="window.location.href='/dashboard/post/0'">Add a New Post</button>
+    </div>
+    <div class="post-parts">
+        <h1>Posts:</h1>
+        {% if posts|length==0 %}
+        <h2>No Posts to show.</h2>
+        {% else %}
+        <table class="post-table">
+            <thead>
+                <tr>
+                    <th>SNO</th>
+                    <th>Title</th>
+                    <th>Tagline</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.tagline[:40]}}</td>
+                    <td><a href="/dashboard/post/{{post.sno}}" class="action-btns">Edit</a>
+                        <a href="/dashboard/delete/post/{{post.sno}}" class="action-btns">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</section>
+<section class="acc-records">
+    <h1>Account Records:</h1>
+    {% if datas|length==0 %}
+    <h2>No Records to show.</h2>
+    {% else %}
+    <table class="acc-table">
+        <thead>
+            <tr>
+                <th>SNO</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in datas %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.pw}}</td>
+                <td>
+                    <a href="/dashboard/delete/acc/{{data.sno}}" class="action-btns">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</section>
+
+{% endblock body %}

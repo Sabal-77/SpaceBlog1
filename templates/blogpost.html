@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Blog
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="static/blog.css">
+{% endblock css %}
+{% block body %}
+<section class="blog">
+    <h2>{{post.title}}</h2>
+</section>
+<section class="blog-posts">
+        <div class="posts">
+            <h2 class="tagline">{{post.tagline}}</h2>
+            <h3 class="date">Posted on {{(post.date).strftime('%c')}}</h3>
+            <p class="content">{{post.content[:100]}}...</p>
+        </div>
+    <div class="buttons">
+        <button class="btns" onclick="window.location.href='/blog'">&larr; Back</button>
+    </div>
+</section>
+{% endblock body %}
